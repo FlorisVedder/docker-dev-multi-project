@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpDockerContainerSettings">
+    <list>
+      <map>
+        <entry key="1e570324-fd4f-4a02-91ed-89959079f79a">
+          <value>
+            <DockerContainerSettings>
+              <option name="version" value="1" />
+              <option name="volumeBindings">
+                <list>
+                  <DockerVolumeBindingImpl>
+                    <option name="containerPath" value="/var/www/html" />
+                    <option name="hostPath" value="$PROJECT_DIR$/projects" />
+                  </DockerVolumeBindingImpl>
+                  <DockerVolumeBindingImpl>
+                    <option name="containerPath" value="/usr/local/bin/php/php.ini" />
+                    <option name="hostPath" value="$PROJECT_DIR$/dockerconfig/docker_php.ini" />
+                  </DockerVolumeBindingImpl>
+                </list>
+              </option>
+            </DockerContainerSettings>
+          </value>
+        </entry>
+      </map>
+    </list>
+  </component>
+</project>

@@ -1,0 +1,33 @@
+web:
+  build: .
+  environment:
+    DNSDOCK_NAME: web
+    DNSDOCK_IMAGE: projectx
+    SQL_HOST: sql.projectx.docker
+  ports:
+    - "8001:80"
+    - "2201:22"
+  volumes:
+    - ./projects/:/var/www/html/
+    - ./dockerconfig/virtualhosts.conf:/etc/apache2/sites-enabled/virtualhosts.conf
+    - ./dockerconfig/20-xdebug.ini:/usr/local/etc/php/conf.d/20-xdebug.ini
+    - ./dockerconfig/php.ini:/usr/local/etc/php/php.ini
+  links:
+    - mysql
+
+mysql:
+  image: mysql:8.0
+  ports:
+    - "3307:3306"
+  environment:
+    DNSDOCK_NAME: sql
+    DNSDOCK_IMAGE: projectx
+    MYSQL_ROOT_PASSWORD: devbase
+    MYSQL_USER: dev
+    MYSQL_PASSWORD: devbase
+    MYSQL_DATABASE: mydb
+
+### Notitions for when making a DockerFile
+# install wget
+# install lynx
+# install nano
