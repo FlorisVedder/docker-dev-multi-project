@@ -6,9 +6,8 @@ RUN         apt-get update && apt-get install -y --fix-missing \
             openssh-server \
             git\
             zip\
-            mysql-server\
             && rm -rf /var/lib/apt/lists/* ; \
-            docker-php-ext-install mysqli; \
+            docker-php-ext-install pdo pdo_mysql mysqli; \
             \
             \
             mkdir /var/run/sshd; \
