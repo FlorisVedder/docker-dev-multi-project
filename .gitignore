@@ -1,6 +1,6 @@
 .DS_Store
 projects/*
-!projects/
+!projects/web
 
 # Created by https://www.gitignore.io/api/phpstorm
 
