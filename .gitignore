@@ -1,5 +1,5 @@
 .DS_Store
-projects/
+projects/*
 
 # Created by https://www.gitignore.io/api/phpstorm
 

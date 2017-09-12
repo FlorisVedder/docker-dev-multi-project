@@ -135,3 +135,15 @@ but installed it on my Mac and used it as a local resource for PHP Storm.
 Therefore you have to set it up in two places in PHPStorm:
 Under: Languages & Frameworks > PHP > Code Sniffer
 And enable it under: Editor > Inspections > PHP > PHP Code Sniffer validation
+
+### .gitignore.
+Everything in the project directory is ignored. So you can have a seperate repository for
+your project and for this docker configuration. 
+
+The other way around: This docker project is designed as a seperate docker development
+environment and is not specific for one project.
+
+### PHPStorm included settings.
+I didn' tested it fully but I have included some of the settings in the .idea directory
+of this repository so it might be that things like the docker or the xdebug configuration
+already work for you or can be imported to work.
