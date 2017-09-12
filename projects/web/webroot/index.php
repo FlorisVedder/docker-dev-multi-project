@@ -21,12 +21,5 @@ http://web:8001/
 </p>
 END;
 
-$daysInWeek = 7 ;
-$daysInYear = 365 ;
-$weeksInYear = $daysInYear/$daysInWeek ;
-$result = $weeksInYear ;
-
-echo "SERVER['REMOTE_ADDR'] " . $_SERVER['REMOTE_ADDR'];
-
 echo phpinfo();
 
