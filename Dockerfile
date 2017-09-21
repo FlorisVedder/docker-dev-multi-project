@@ -1,4 +1,4 @@
-FROM	      php:7.0-apache
+FROM	      php:5.6-apache
 MAINTAINER  Floris Vedder
 RUN         apt-get update && apt-get install -y --fix-missing \
             nano \

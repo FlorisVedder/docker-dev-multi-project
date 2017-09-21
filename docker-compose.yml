@@ -16,7 +16,7 @@ web:
     - mysql
 
 mysql:
-  image: mysql:8.0
+  image: mysql:5.5
   ports:
     - "3307:3306"
   environment:
