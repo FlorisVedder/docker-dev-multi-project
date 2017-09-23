@@ -1,13 +1,19 @@
 FROM	      php:7.0-apache
-MAINTAINER  Floris Vedder
+MAINTAINER  Floris Vedder <florisvedder@hotmail.com>
 RUN         apt-get update && apt-get install -y --fix-missing \
-            nano \
-            wget \
-            openssh-server \
+            cron \
             git\
+            mysql-client\
+            nano \
+            openssh-server \
+            wget \
             zip\
             && rm -rf /var/lib/apt/lists/* ; \
-            docker-php-ext-install pdo pdo_mysql mysqli; \
+            docker-php-ext-install \
+            gd \
+            mysqli \
+            pdo \
+            pdo_mysql; \
             \
             \
             mkdir /var/run/sshd; \
@@ -29,11 +35,14 @@ RUN         apt-get update && apt-get install -y --fix-missing \
             pecl install xdebug-2.5.0; \
             a2dissite 000-default.conf; \
             a2enmod vhost_alias; \
+            a2enmod rewrite; \
+            a2enmod headers; \
             \
             \
-            curl --silent --show-error https://getcomposer.org/installer | php;\
-            mv composer.phar /usr/local/bin/composer; \
+            curl -sS https://getcomposer.org/installer | \
+            php -- --install-dir=/usr/local/bin --filename=composer; \
             composer global require squizlabs/php_codesniffer; \
+            composer global require drush/drush:dev-master; \
             echo "export PATH=$PATH:/root/.composer/vendor/bin/" >> /root/.bashrc; \
             /bin/bash -c 'source $HOME/.bashrc';
 EXPOSE 8001-8099 2201-2299
