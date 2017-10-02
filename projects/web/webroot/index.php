@@ -21,5 +21,12 @@ http://web:8001/
 </p>
 END;
 
+if (extension_loaded('gd') && function_exists('gd_info')) {
+    echo "PHP GD library is enabled in your system.";
+}
+else {
+    echo "PHP GD library is not enabled on your system.";
+}
+
 echo phpinfo();
 
